@@ -14,7 +14,8 @@
 
   [class^="col-"] {
     // this allows elements to shrink/grow equally
-    width: 100%;
+    flex-basis: 0;
+    flex-shrink: 1;
   }
 
   .col-1-of-2,
