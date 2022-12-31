@@ -26,17 +26,31 @@
     display: flex;
     opacity: 0;
 
-    opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
+
+    @include respond('tab-land') {
+      flex-direction: column-reverse;
+      max-height: 90vh;
+      overflow: auto;
+    }
   }
 
   &__left {
-    flex: 1 1 0;
+    width: 300px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    @include respond('tab-land') {
+      width: 100%;
+      flex-direction: row;
+    }
   }
 
   &__right {
-    flex: 2 1 0;
+    flex-grow: 1;
     padding: 3rem 5rem;
     display: flex;
     flex-direction: column;
@@ -45,8 +59,11 @@
   }
 
   &__img {
-    display: block;
-    width: 100%;
+    flex: 1 1 0%;
+
+    @include respond('tab-land') {
+      width: 50%;
+    }
   }
 
   &__text {
@@ -58,6 +75,10 @@
     column-rule: 1px solid $color-grey-light-2;
 
     hyphens: auto;
+
+    @include respond('tab-port') {
+      column-count: 1;
+    }
   }
 
   &:target {

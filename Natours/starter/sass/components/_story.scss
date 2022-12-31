@@ -6,10 +6,19 @@
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
   border-radius: 3px;
   padding: 6rem;
-  padding-left: 6rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
   background-color: rgba($color-white, 0.2);
+
+  @include respond('tab-port') {
+    width: 100%;
+    padding: 4rem;
+    padding-right: 7rem;
+  }
+
+  @include respond('phone') {
+    transform: skewX(0);
+  }
 
   &:hover &__image {
     filter: blur(3px) brightness(80%);
@@ -30,6 +39,10 @@
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: skewX(12deg);
+
+    @include respond('phone') {
+      transform: skewX(0);
+    }
   }
 
   &__image {
@@ -41,6 +54,10 @@
 
   &__text {
     transform: translateX(3rem) skew(12deg);
+
+    @include respond('phone') {
+      transform: translateX(3rem) skew(0);
+    }
   }
 
   &__caption {
