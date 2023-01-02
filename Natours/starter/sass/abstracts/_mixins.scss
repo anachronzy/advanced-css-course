@@ -27,21 +27,25 @@
 // smart people say that it is better to use ems here; (1em = 16px by default)
 
 $breakpoints: (
-  'phone': 37.5em,        // 600px
-  'tab-port': 56.25em,    // 900px
-  'tab-land': 75em,       // 1200px
-  'big-desktop': 112.5em, // 1800px
+  'phone': 37.5em,
+  // 600px
+  'tab-port': 56.25em,
+  // 900px
+  'tab-land': 75em,
+  // 1200px
+  'big-desktop': 112.5em,
+  // 1800px
 );
 
 @mixin respond($breakpoint) {
   $value: map-get($breakpoints, $breakpoint);
 
   @if $breakpoint == 'big-desktop' {
-    @media (min-width: $value) {
+    @media only screen and (min-width: $value) {
       @content;
     }
   } @else {
-    @media (max-width: $value) {
+    @media only screen and (max-width: $value) {
       @content;
     }
   }

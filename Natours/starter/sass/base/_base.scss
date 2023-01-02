@@ -1,3 +1,5 @@
+@import '../abstracts/variables';
+
 *,
 *::before,
 *::after {
@@ -34,4 +36,9 @@ body {
 
 img {
   max-width: 100%;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }
